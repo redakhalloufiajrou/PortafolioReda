@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar personajes | R&M Wiki</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="body">
+    <header class="site-header">
+        <div class="brand"></div>
+
+        <nav class="site-nav">
+            <a class="site-nav__link" href="index.html">Inicio</a>
+            <a class="site-nav__link" href="sobre_nosotros.html">Sobre nosotros</a>
+            <a class="site-nav__link" href="buscar_personaje.html">Buscar personajes</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="busqueda">
+            <h2>Buscar personaje por nombre o id</h2>
+            <input type="text" id="busqueda-personaje" placeholder="Escribe un nombre o un id">
+            <button id="btn-buscar">Buscar</button>
+
+            <div id="resultado-busqueda"></div>
+            <p class="error-busqueda"></p>
+        </section>
+
+        <section class="aleatorio">
+            <h2>Personaje aleatorio</h2>
+            <button class="btn-aleatorio">Mostrar personaje aleatorio</button>
+
+            <div class="resultado-aleatorio"></div>
+            <p class="error-aleatorio"></p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__links">
+            <a href="https://www.instagram.com/rickandmorty/" class="site-footer__link">
+                <img src="img/insta4.png" alt="Instagram" width="50">
+            </a>
+            <a href="https://x.com/RickandMorty?lang=es" class="site-footer__link">
+                <img src="img/twitter.png" alt="X" width="50">
+            </a>
+            <a href="https://youtu.be/E8cXKMR9a1Q?si=X8JqIAxzjhmQUxSX" class="site-footer__link">
+                <img src="img/youtube1.png" alt="YouTube" width="50">
+            </a>
+            <a href="https://mail.google.com/mail/u/0/#inbox" class="site-footer__link">
+                <img src="img/gmail.png" alt="Gmail" width="50">
+            </a>
+        </div>
+    </footer>
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>

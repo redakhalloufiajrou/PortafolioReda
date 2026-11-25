@@ -1,0 +1,597 @@
+/* NavBar */
+
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.barra-navegacion {
+    background-color: #000000b9;
+    padding: 15px;
+    border-radius: 2%;
+}
+
+.nav-contenedor {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-enlace {
+    color: #cccccc;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.nav-enlace:hover {
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.nav-menu-boton {
+    display: none;
+}
+
+/* Página de listado de Citas */
+
+.citas-seccion {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.citas-titulo {
+    font-size: 28px;
+    color: #333333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.citas-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cita-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    width: 320px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cita-card-body {
+    padding: 20px;
+}
+
+.cita-cliente {
+    margin-top: 0;
+    color: #111111;
+    font-size: 18px;
+}
+
+.cita-info {
+    font-size: 14px;
+    color: #555555;
+    margin: 10px 0;
+}
+
+.cita-nota {
+    font-size: 13px;
+    color: #777777;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 3px solid #333;
+    margin-top: 15px;
+}
+
+.citas-error {
+    background-color: #ffdddd;
+    color: #aa0000;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Lista de servicios (Inicio) */
+
+.contenedor-servicios {
+    margin: 40px auto;
+    padding: 0 20px;
+    max-width: 800px
+}
+
+.contenedor-servicios h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.grupo-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.enlace-servicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 15px;
+    text-decoration: none;
+    color: #333333;
+}
+
+.enlace-servicio:hover {
+    border-color: #1a1a1a;
+    background-color: #fafafa;
+}
+
+.enlace-servicio h5 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.enlace-servicio small {
+    color: #777777;
+}
+
+.precio-servicio {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    
+}.contenedor-servicios {
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.contenedor-servicios h2 {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.introduccion-servicios {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-bottom: 40px;
+}
+
+.informacion-adicional {
+    background-color: #f9f9f9;
+    border-left: 4px solid #333;
+    padding: 20px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 30px;
+}
+
+.grupo-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.enlace-servicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 15px;
+    text-decoration: none;
+    color: #333333;
+}
+
+.enlace-servicio:hover {
+    border-color: #1a1a1a;
+    background-color: #fafafa;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+}
+
+.enlace-servicio h5 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+}
+
+.enlace-servicio small {
+    color: #777777;
+}
+
+.precio-servicio {
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+
+
+.servicio-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+}
+
+.servicio-acciones {
+    display: flex;
+    gap: 10px;
+}
+
+/* Formulario parra pedir cita */
+
+form {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 25px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #444444;
+    font-size: 14px;
+}
+
+select, input[type="date"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+#contenedorHoras {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-hora {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid #1a1a1a;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-hora:hover {
+    background-color: #f0f0f0;
+}
+
+.btn-hora.seleccionada {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.btn-hora-ocupada {
+    background-color: #eeeeee;
+    color: #bbbbbb;
+    border: 1px solid #dddddd;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: not-allowed;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #333333;
+}
+
+#mensaje {
+    max-width: 500px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: bold;
+    color: #333333;
+}
+
+/* Personal (Peluqueros) */
+
+.contenedor-principal {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+h2 {
+    color: #333333;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.contenedor-formulario {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contenedor-formulario h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333333;
+}
+
+.contenedor-formulario input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#crearBtn, .btn-guardar-cambios {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#crearBtn:hover, .btn-guardar-cambios:hover {
+    background-color: #333333;
+}
+
+.mensaje-oculto {
+    display: none;
+}
+
+.mensaje-visible {
+    display: block;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mensaje-visible.error {
+    background-color: #ffdddd;
+    color: #aa0000;
+    border: 1px solid #ffbbbb;
+}
+
+.mensaje-visible.exito {
+    background-color: #ddffdd;
+    color: #00aa00;
+    border: 1px solid #bbffbb;
+}
+
+.grupo-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.elemento-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.elemento-lista h5 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #333333;
+}
+
+.elemento-lista small {
+    color: #777777;
+}
+
+.editar-btn, .citas-btn, .btn-volver {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #cccccc;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 5px;
+}
+
+.editar-btn:hover, .citas-btn:hover, .btn-volver:hover {
+    background-color: #f5f5f5;
+    border-color: #999999;
+}
+
+.eliminar-btn {
+    background-color: #ffdddd;
+    color: #cc0000;
+    border: 1px solid #ffcccc;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.eliminarCita-btn{
+    width: 100%;
+    background-color: #ffdddd;
+    color: #cc0000;
+    border: 1px solid #ffcccc;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.eliminar-btn:hover, .eliminarCita-btn:hover {
+    background-color: #ffcccc;
+}
+
+/* Lista de citas de cada peluquero */
+
+.lista-agenda {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.elemento-cita {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    width: 700px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    justify-content: space-between;
+}
+.datos-cliente, .datos-tiempo {
+    display: flex;
+    flex-direction: column;
+}
+.datos-tiempo {
+    text-align: right;
+}
+.cita-estado {
+    font-weight: bold;
+    color: #0056b3;
+}
+.cita-nota2{
+    font-size: 13px;
+    color: #777777;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+/* Footer */
+
+.footer{
+    background-color: #000000b9;
+    border-radius: 2%;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.footer-contenedor{
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-seccion{
+    min-width: 200px;
+}
+
+.footer-titulo{
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-subtitulo{
+    color: #ffffff;
+}
+
+.footer-texto{
+    color: #cccccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-bottom{
+    border-top: 1px solid #333333;
+    margin-top: 20px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.footer-bottom p{
+    color: #cccccc;
+    font-size: 13px;
+    margin: 0;
+}

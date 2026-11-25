@@ -1,0 +1,231 @@
+<script>
+    function maximoMoralColonos() {
+        while (moralColonos.length < CUATRO) {
+            moralColonos.push(MORAL);
+        }
+    }
+    function maximoOxigenoDisponible() {
+        while (oxigenoDisponible.length < CUATRO) {
+            oxigenoDisponible.push(OXIGENO);
+        }
+    }
+    function pantallaInicial() {
+        console.log(
+            "\nMoral: " +
+            moralColonos.join(``) +
+            "\nOxigeno Disponible: " +
+            oxigenoDisponible.join(``) +
+            "\nInstalaciones: " +
+            estadoInstalaciones.join(``) +
+            "\nEnergia: " +
+            energia + " kWh" +
+            "\nPoblacion: " +
+            poblacion +
+            "\nInventario: " +
+            inventarioProductos
+        );
+    }
+    //Constantes
+    const MORAL = "😊";
+    const OXIGENO = "🪐";
+    const INSTALACIONES = "⚠️";
+    const PRODUCTOS = ["Generador Secundario🔋", "Modulo de Recreación📺", "Sistema de Reparación Automática🛠️", "Filtro Avanzado de Oxigeno🌀", "Cápsula de Emergencia🚀", "Refuerzo de Estructuras🔩", "Panel Solar Mejorado🌞", "Depósito de Recursos🛢️"]
+    const PRECIOS = [200, 500, 150, 300, 400, 100, 350, 600]
+    const CUATROPRODUCTOS = 4
+    const CERO = 0, UNO = 1, DOS = 2, TRES = 3, CUATRO = 4, CINCO = 5, SEIS = 6, DIEZ = 10, CINCUENTA = 50, CIEN = 100, DOSCIENTOS = 200, ENERGIAMAXIMA = 9999, PROBABILIDADEVENTO = 0.5;
+    //Arrays
+    let moralColonos = [], oxigenoDisponible = [], estadoInstalaciones = [], productosSeleccionados = [], precioSeleccionado = [], inventarioProductos = [];
+    let eventos = ["tormentaPolvo", "frioExtremo", "celebracionInesperada"];
+    //Variables
+    let mensajeMenu =
+        "Seleccione una de las siguentes opciones: " +
+        "\n1-🪐Generar Oxigeno🪐" +
+        "\n2-🧑‍🚀Mejorar la Moral🧑‍🚀" +
+        "\n3-🔧Reparar Instalaciones🔧" +
+        "\n4-📡Recolectar Energia📡" +
+        "\n5-🚀Mercado🚀"
+    let menu = "", interaccion = "", interaccion2 = "", energia = 500, poblacion = 10, llegadas = "", muertes = "", tipoActividad = "", eventoAleatorio = "", evento = "", duracionEvento = 0; 
+    let productosAleatorios = "", productoComprado = "", precioProductoComprado = "", contadorMercado = 0, pantallaCompra = "", opcionUsuario = "", opcionUsuarioReal = "", eventoActivo;
+
+    maximoMoralColonos()
+    maximoOxigenoDisponible()
+    pantallaInicial()
+
+    menu = prompt(mensajeMenu)
+    while (productosSeleccionados.length < CUATROPRODUCTOS) {
+        productosAleatorios = Math.floor(Math.random() * PRODUCTOS.length);
+        if (!productosSeleccionados.includes(PRODUCTOS[productosAleatorios])) {
+            productosSeleccionados.push(PRODUCTOS[productosAleatorios]);
+            precioSeleccionado.push(PRECIOS[productosAleatorios])
+        }
+    }
+
+    while (poblacion > CERO && poblacion <= CIEN && oxigenoDisponible.length > CERO && energia >= CINCUENTA) {
+
+        pantallaCompra = "🏚️​Bienvenido al Mercado🏚️\n" +
+            "🪫Energia disponible🪫: " + energia + "kWh\n" +
+            "Seleccione lo que desea comprar:\n​"
+
+        contadorMercado++;
+        if (contadorMercado == CINCO) {
+            productosSeleccionados = []
+            precioSeleccionado = []
+            while (productosSeleccionados.length < CUATROPRODUCTOS) {
+                productosAleatorios = Math.floor(Math.random() * PRODUCTOS.length);
+                if (!productosSeleccionados.includes(PRODUCTOS[productosAleatorios])) {
+                    productosSeleccionados.push(PRODUCTOS[productosAleatorios]);
+                    precioSeleccionado.push(PRECIOS[productosAleatorios])
+                }
+            }
+            contadorMercado = CERO
+        }
+
+        if (menu == UNO) {
+            if (estadoInstalaciones.length >= TRES) {
+                alert("😅No puedes generar oxigeno, instalaciones dañadas⚠️");
+            } else if (oxigenoDisponible.length == CUATRO) {
+                alert("😅No puedes generar mas oxigeno, Nivel de oxigeno al maximo😅");
+            } else {
+                oxigenoDisponible.push(OXIGENO);
+                energia -= CINCUENTA
+            }
+        }
+
+        if (menu == DOS) {
+            if (estadoInstalaciones.length >= TRES) {
+                alert("😅No puedes realizar actividades, instalaciones dañadas⚠️");
+            } else if (energia < CIEN) {
+                alert("😅No dispones de suficiente energia para poder realizar esta actividad😅")
+            } else {
+                tipoActividad = prompt("Indique que actividad desea realizar: " +
+                    "\n1-🎮Juegos y Conversaciones" +
+                    "\n2-🎥Sesion de peliculas"
+                )
+                if (tipoActividad == UNO) {
+                    moralColonos.push(MORAL)
+                    oxigenoDisponible.pop(OXIGENO)
+                } else {
+                    moralColonos.push(MORAL, MORAL)
+                    energia -= CIEN
+                }
+            }
+        }
+
+        if (menu == TRES) {
+            if (estadoInstalaciones.length != CERO) {
+                estadoInstalaciones = []
+                console.log("👌Las instalaciones han sido reparadas correctamente👌");
+            } else {
+                console.log("😄Las instalaciones estan en perfecto estado😄");
+            }
+        }
+
+        if (menu == CUATRO) {
+            if (estadoInstalaciones.length >= CUATRO) {
+                alert("No puedes recolectar energia, instalaciones dañadas⚠️")
+            } else if (energia < ENERGIAMAXIMA){
+                energia += Math.floor(Math.random() * (DOSCIENTOS - CIEN + UNO)) + CIEN;
+            }
+        }
+
+        if (menu == CINCO) {
+            for (let i = CERO; i < CUATROPRODUCTOS; i++) {
+                pantallaCompra += `${i + UNO}.${productosSeleccionados[i]} - ${precioSeleccionado[i]}\n`
+            }
+            opcionUsuario = Number(prompt(pantallaCompra))
+            while (opcionUsuario != UNO && opcionUsuario != DOS && opcionUsuario != TRES && opcionUsuario != CUATRO) {
+                alert("😥​Numero introducido incorrecto😥​, Introduzca otra opcion: ")
+                opcionUsuario = Number(prompt(pantallaCompra))
+            }
+            opcionUsuarioReal = opcionUsuario - UNO
+            productoComprado = productosSeleccionados[opcionUsuarioReal]
+            precioProductoComprado = Number(precioSeleccionado[opcionUsuarioReal])
+            if (energia == CERO || energia < precioProductoComprado) {
+                alert("😥Saldo insuficiente😥")
+            } else {
+                if (!inventarioProductos.includes(productoComprado)) {
+                    inventarioProductos.push(productoComprado)
+                    energia -= precioProductoComprado
+                    console.log("Has comprado " + productoComprado + " por la cantidad de: " + precioProductoComprado + " kWh");
+                } else {
+                    alert("😥El producto ya ha sido comprado😥")
+                }
+            }
+        }
+
+        interaccion2++
+        if (interaccion2 == CINCO && duracionEvento == CERO) {
+            if (Math.random() > PROBABILIDADEVENTO) {
+                eventoActivo = eventos[Math.floor(Math.random() * eventos.length)]
+                duracionEvento = TRES
+            }
+            interaccion2 = CERO
+        }
+
+        if (duracionEvento > CERO) {
+            if (eventoActivo == "tormentaPolvo") {
+                console.log("---Evento Aleatorio Activado: 🌪️Tormenta de Polvo🌪️---");
+                energia += Math.floor(Math.random() * (CIEN - CINCUENTA + UNO)) + CINCUENTA;
+            } else if (eventoActivo == "frioExtremo"){
+                console.log("---Evento Aleatorio Activado: ❄️Frio Extremo❄️---");
+                moralColonos.pop(MORAL)
+            } else {
+                console.log("---Evento Aleatorio Activado: 🎉Celebracion Inesperada🎉---");
+                moralColonos.push(MORAL)
+            }
+            duracionEvento--
+        }
+
+        interaccion++;
+        if (interaccion == TRES) {
+            estadoInstalaciones.push(INSTALACIONES);
+            moralColonos.pop();
+            interaccion = CERO;
+        }
+
+        while (moralColonos.length > CUATRO) {
+            moralColonos.pop();
+        }
+        while (oxigenoDisponible.length > CUATRO) {
+            oxigenoDisponible.pop();
+        }
+        while (estadoInstalaciones.length > SEIS) {
+            estadoInstalaciones.pop();
+        }
+
+        llegadas = Math.floor(Math.random() * DIEZ) + UNO;
+        muertes = Math.floor(Math.random() * CINCO) + UNO;
+        poblacion += llegadas - muertes;
+
+        console.log(
+            "\nMoral: " +
+            moralColonos.join(``) +
+            "\nOxigeno Disponible: " +
+            oxigenoDisponible.join(``) +
+            "\nInstalaciones: " +
+            estadoInstalaciones.join(``) +
+            "\nEnergia: " +
+            energia + " kWh" +
+            "\nPoblacion: " +
+            poblacion +
+            "\nInventario: " +
+            inventarioProductos.join(`, `)
+        );
+        menu = prompt(mensajeMenu)
+    }
+    console.log("=======================FIN DEL JUEGO=======================");
+    if (poblacion >= CIEN) {
+        console.log("😅Has superado el Limite de colonos en la base espacial😅​");
+        console.log("🏆​Gracias por jugar a MarSTEM🏆​");
+    }else if(oxigenoDisponible == CERO){
+        console.log("😅Los colonos se han quedado sin oxigeno disponible😅​");
+        console.log("🏆​Gracias por jugar a MarSTEM🏆​");
+    } else if (poblacion > CERO){
+        console.log("😅No quedan colonos en la base espacial😅​");
+        console.log("🏆​Gracias por jugar a MarSTEM🏆​");
+    }else {
+        console.log("😅No queda energia disponible😅​");
+        console.log("🏆​Gracias por jugar a MarSTEM🏆​");
+    }
+    
+</script>
